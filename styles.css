@@ -1,0 +1,18 @@
+body {
+  background-color: orange;
+}
+
+#grid-frame {
+  border: 1px solid black;
+}
+
+.row {
+
+}
+
+.grid-square {
+  display: inline-block;
+  height: 150px;
+  width: 150px;
+  border: 1px dotted yellow;
+}
