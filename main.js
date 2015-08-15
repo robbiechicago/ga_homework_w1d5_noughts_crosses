@@ -60,11 +60,33 @@ function button_id () {
 
 function winChecker() {
   winTop = tl.innerHTML + tc.innerHTML + tr.innerHTML;
+  winMid = ml.innerHTML + mc.innerHTML + mr.innerHTML;
+  winBottom = bl.innerHTML + bc.innerHTML + br.innerHTML;
+  winLeft = tl.innerHTML + ml.innerHTML + bl.innerHTML;
+  winCentre = tc.innerHTML + mc.innerHTML + bc.innerHTML;
+  winRight = tr.innerHTML + mr.innerHTML + br.innerHTML;
+  winDiaDown = tl.innerHTML + mc.innerHTML + br.innerHTML;
+  winDiaUp = tr.innerHTML + mc.innerHTML + bl.innerHTML;
+
   console.log(winTop);
-  if (winTop === 'xxx' || winTop === 'ooo') {
-    console.log("Winner!");
-  }
-}
+  console.log(winMid);
+  console.log(winBottom);
+  console.log(winLeft);
+  console.log(winCentre);
+  console.log(winRight);
+  console.log(winDiaDown);
+  console.log(winDiaUp);
+
+  trios = [winTop, winMid, winBottom, winLeft, winCentre, winRight, winDiaDown, winDiaUp];
+  for (var i = 0, len = trios.length; i < len; i++) {
+    if (trios[i] === 'xxx') {
+      console.log("X WINS!");
+    } else if (trios[i] === 'ooo') {
+      console.log("O WINS!");
+    };
+  };
+};
+
 
 
 
