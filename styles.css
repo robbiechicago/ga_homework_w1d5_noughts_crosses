@@ -3,6 +3,9 @@ body {
 }
 
 #grid-frame {
+  display: inline-block;
+  width: auto;
+  margin: 0 auto;
   border: 1px solid black;
 }
 
@@ -11,11 +14,11 @@ body {
 }
 
 .top {
-  background-color: green;
+
 }
 
 .centre {
-  background-color: pink;
+
 }
 
 .grid-square {
