@@ -10,6 +10,14 @@ body {
 
 }
 
+.top {
+  background-color: green;
+}
+
+.centre {
+  background-color: pink;
+}
+
 .grid-square {
   display: inline-block;
   height: 150px;
