@@ -1,14 +1,3 @@
-// Create button event listeners
-var tlButton = document.getElementById('button-tl').addEventListener('click',button_id);
-var tcButton = document.getElementById('button-tc').addEventListener('click',button_id);
-var trButton = document.getElementById('button-tr').addEventListener('click',button_id);
-var mlButton = document.getElementById('button-ml').addEventListener('click',button_id);
-var mcButton = document.getElementById('button-mc').addEventListener('click',button_id);
-var mrButton = document.getElementById('button-mr').addEventListener('click',button_id);
-var blButton = document.getElementById('button-bl').addEventListener('click',button_id);
-var bcButton = document.getElementById('button-bc').addEventListener('click',button_id);
-var brButton = document.getElementById('button-br').addEventListener('click',button_id);
-
 //shortcuts to buttons etc
 var tl = document.getElementById('button-tl');
 var tc = document.getElementById('button-tc');
@@ -22,6 +11,20 @@ var br = document.getElementById('button-br');
 var allSquares = [tl, tc, tr, ml, mc, mr, bl, bc, br];
 var xw = document.getElementById('x-wins');
 var ow = document.getElementById('o-wins');
+var reset = document.getElementById('reset-board');
+
+// Create button event listeners
+var tlButton = tl.addEventListener('click',button_id);
+var tcButton = tc.addEventListener('click',button_id);
+var trButton = tr.addEventListener('click',button_id);
+var mlButton = ml.addEventListener('click',button_id);
+var mcButton = mc.addEventListener('click',button_id);
+var mrButton = mr.addEventListener('click',button_id);
+var blButton = bl.addEventListener('click',button_id);
+var bcButton = bc.addEventListener('click',button_id);
+var brButton = br.addEventListener('click',button_id);
+var brButton = reset.addEventListener('click',resetBoard);
+
 
 //other variables
 var xWins = 0;
