@@ -6,24 +6,26 @@ body {
   display: inline-block;
   width: auto;
   margin: 0 auto;
-  border: 1px solid black;
+  /*border: 1px solid black;*/
 }
 
-.row {
-
-}
-
-.top {
-
-}
-
-.centre {
-
+#right-bar {
+  display: inline-block;
+  width: auto;
+  /*border: 1px solid red;*/
+  vertical-align: top;
 }
 
 .grid-square {
   display: inline-block;
   height: 150px;
   width: 150px;
-  border: 1px dotted yellow;
+  /*border: 1px dotted yellow;*/
+}
+
+.button {
+  margin: 35px;
+  width: 70px;
+  height: 70px;
+  font-size: 25px;
 }

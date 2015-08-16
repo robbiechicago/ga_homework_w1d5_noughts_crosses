@@ -9,6 +9,7 @@ var blButton = document.getElementById('button-bl').addEventListener('click',but
 var bcButton = document.getElementById('button-bc').addEventListener('click',button_id);
 var brButton = document.getElementById('button-br').addEventListener('click',button_id);
 
+//shortcuts to buttons etc
 var tl = document.getElementById('button-tl');
 var tc = document.getElementById('button-tc');
 var tr = document.getElementById('button-tr');
@@ -18,7 +19,12 @@ var mr = document.getElementById('button-mr');
 var bl = document.getElementById('button-bl');
 var bc = document.getElementById('button-bc');
 var br = document.getElementById('button-br');
+var xw = document.getElementById('x-wins');
+var ow = document.getElementById('o-wins');
 
+//other variables
+var xWins = 0;
+var oWins = 0;
 
 // set up winning line arrays
 // rows
@@ -80,8 +86,12 @@ function winChecker() {
   trios = [winTop, winMid, winBottom, winLeft, winCentre, winRight, winDiaDown, winDiaUp];
   for (var i = 0, len = trios.length; i < len; i++) {
     if (trios[i] === 'xxx') {
+      xWins++;
+      xw.innerHTML = xWins;
       console.log("X WINS!");
     } else if (trios[i] === 'ooo') {
+      oWins++;
+      ow.innerHTML = oWins;
       console.log("O WINS!");
     };
   };
