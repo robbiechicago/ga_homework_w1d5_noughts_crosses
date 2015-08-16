@@ -29,3 +29,19 @@ body {
   height: 70px;
   font-size: 25px;
 }
+
+.button-x {
+  margin: 35px;
+  width: 70px;
+  height: 70px;
+  font-size: 25px;
+  background-color: red;
+}
+
+.button-o {
+  margin: 35px;
+  width: 70px;
+  height: 70px;
+  font-size: 25px;
+  background-color: green;
+}

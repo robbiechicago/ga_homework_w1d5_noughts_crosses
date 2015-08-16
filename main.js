@@ -63,6 +63,11 @@ function button_id () {
     oxxy = ox();
     console.log(this.id);
     this.innerHTML = oxxy;
+    if (oxxy === 'x') {
+      this.className = 'button-x';
+    } else {
+      this.className = 'button-o';
+    }
     winChecker();
   }; 
 };
@@ -78,6 +83,7 @@ function winChecker() {
   winRight = tr.innerHTML + mr.innerHTML + br.innerHTML;
   winDiaDown = tl.innerHTML + mc.innerHTML + br.innerHTML;
   winDiaUp = tr.innerHTML + mc.innerHTML + bl.innerHTML;
+  fullBoard = winTop + winMid + winBottom;
 
   console.log(winTop);
   console.log(winMid);
@@ -87,6 +93,7 @@ function winChecker() {
   console.log(winRight);
   console.log(winDiaDown);
   console.log(winDiaUp);
+  console.log(fullBoard);
 
   //create an array of winning line strings (see above) and check each for xxx or ooo
   trios = [winTop, winMid, winBottom, winLeft, winCentre, winRight, winDiaDown, winDiaUp];
@@ -105,13 +112,18 @@ function winChecker() {
       resetBoard();
     };
   };
+  if (fullBoard.indexOf('-') === 0-1) {
+    alert("Stalemate!  Try again.");
+    resetBoard();
+  }
 };
 
+//reset the board
 function resetBoard() {
   for (var i = 0, len = allSquares.length; i < len; i++) {
     allSquares[i].innerHTML = "-";
+    allSquares[i].className = "button";
   }
-
 }
 
 
