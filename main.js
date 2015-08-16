@@ -19,6 +19,7 @@ var mr = document.getElementById('button-mr');
 var bl = document.getElementById('button-bl');
 var bc = document.getElementById('button-bc');
 var br = document.getElementById('button-br');
+var allSquares = [tl, tc, tr, ml, mc, mr, bl, bc, br];
 var xw = document.getElementById('x-wins');
 var ow = document.getElementById('o-wins');
 
@@ -65,6 +66,7 @@ function button_id () {
 
 
 function winChecker() {
+  // create 3-character strings reflecting current state of each winning line
   winTop = tl.innerHTML + tc.innerHTML + tr.innerHTML;
   winMid = ml.innerHTML + mc.innerHTML + mr.innerHTML;
   winBottom = bl.innerHTML + bc.innerHTML + br.innerHTML;
@@ -83,21 +85,31 @@ function winChecker() {
   console.log(winDiaDown);
   console.log(winDiaUp);
 
+  //create an array of winning line strings (see above) and check each for xxx or ooo
   trios = [winTop, winMid, winBottom, winLeft, winCentre, winRight, winDiaDown, winDiaUp];
   for (var i = 0, len = trios.length; i < len; i++) {
     if (trios[i] === 'xxx') {
       xWins++;
       xw.innerHTML = xWins;
       console.log("X WINS!");
+      alert("X wins!  Well done, you're so skillful!");
+      resetBoard();
     } else if (trios[i] === 'ooo') {
       oWins++;
       ow.innerHTML = oWins;
       console.log("O WINS!");
+      alert("O wins!  X is such a dick.");
+      resetBoard();
     };
   };
 };
 
+function resetBoard() {
+  for (var i = 0, len = allSquares.length; i < len; i++) {
+    allSquares[i].innerHTML = "-";
+  }
 
+}
 
 
 
