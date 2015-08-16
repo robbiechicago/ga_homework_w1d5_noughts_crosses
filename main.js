@@ -11,7 +11,8 @@ var br = document.getElementById('button-br');
 var allSquares = [tl, tc, tr, ml, mc, mr, bl, bc, br];
 var xw = document.getElementById('x-wins');
 var ow = document.getElementById('o-wins');
-var reset = document.getElementById('reset-board');
+var resetB = document.getElementById('reset-board');
+var resetS = document.getElementById('reset-scores');
 
 // Create button event listeners
 var tlButton = tl.addEventListener('click',button_id);
@@ -23,8 +24,8 @@ var mrButton = mr.addEventListener('click',button_id);
 var blButton = bl.addEventListener('click',button_id);
 var bcButton = bc.addEventListener('click',button_id);
 var brButton = br.addEventListener('click',button_id);
-var brButton = reset.addEventListener('click',resetBoard);
-
+var resetBButton = resetB.addEventListener('click',resetBoard);
+var resetSButton = resetS.addEventListener('click',resetScores);
 
 //other variables
 var xWins = 0;
@@ -126,11 +127,20 @@ function resetBoard() {
   }
 }
 
+//reset scores
+function resetScores() {
+  xWins = 0;
+  oWins = 0;
+  xw.innerHTML = xWins;
+  ow.innerHTML = oWins;
+}
 
 
 
-
-
+// ADDITIONS REQUIRED
+// 1) problem of double scoring not fixed if two simultaneous winning lines exist
+// 2) stalemate message after final cell selected as winner
+// 3) no computer version
 
 
 
